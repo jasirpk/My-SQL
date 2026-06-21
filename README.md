@@ -284,3 +284,84 @@ SELECT *
 FROM persons
 WHERE name = 'Jasir' OR name = 'John';
 ```
+
+## Sort Records
+
+### Sort by Name (Ascending)
+
+```sql
+SELECT * FROM persons
+ORDER BY name ASC;
+```
+
+### Sort by Age (Descending)
+
+```sql
+SELECT * FROM persons
+ORDER BY age DESC;
+```
+
+### Sort by Multiple Columns
+
+```sql
+SELECT * FROM persons
+ORDER BY age ASC, name ASC;
+```
+
+---
+
+## Add New Column
+
+### Add Email Column
+
+```sql
+ALTER TABLE persons
+ADD email VARCHAR(100);
+```
+
+### Add Address Column
+
+```sql
+ALTER TABLE persons
+ADD address VARCHAR(255);
+```
+
+---
+
+## Rename Column
+
+### Rename Phone Column to Mobile
+
+```sql
+ALTER TABLE persons
+RENAME COLUMN phone TO mobile;
+```
+
+### Rename Name Column to Full Name
+
+```sql
+ALTER TABLE persons
+RENAME COLUMN name TO full_name;
+```
+
+---
+
+## Modify Column Data Type
+
+### Increase Phone Column Length
+
+```sql
+ALTER TABLE persons
+MODIFY COLUMN phone VARCHAR(50);
+```
+
+---
+
+## Delete Column
+
+### Remove Address Column
+
+```sql
+ALTER TABLE persons
+DROP COLUMN address;
+```
