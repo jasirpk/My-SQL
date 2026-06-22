@@ -365,3 +365,104 @@ MODIFY COLUMN phone VARCHAR(50);
 ALTER TABLE persons
 DROP COLUMN address;
 ```
+
+## Delete Records
+
+### Delete Record by ID
+
+```sql
+DELETE FROM persons
+WHERE id = 1;
+```
+
+### Delete Record by Name
+
+```sql
+DELETE FROM persons
+WHERE name = 'Jasir';
+```
+
+### Delete All Records
+
+```sql
+DELETE FROM persons;
+```
+
+### Delete All Records and Reset Auto Increment
+
+```sql
+TRUNCATE TABLE persons;
+```
+
+---
+
+## Get Top Records
+
+### Get First Record
+
+```sql
+SELECT * FROM persons
+LIMIT 1;
+```
+
+### Get Top 5 Records
+
+```sql
+SELECT * FROM persons
+LIMIT 5;
+```
+
+### Get Oldest Person
+
+```sql
+SELECT * FROM persons
+ORDER BY age DESC
+LIMIT 1;
+```
+
+### Get Youngest Person
+
+```sql
+SELECT * FROM persons
+ORDER BY age ASC
+LIMIT 1;
+```
+
+---
+
+## Get Random Records
+
+### Get One Random Record
+
+```sql
+SELECT * FROM persons
+ORDER BY RAND()
+LIMIT 1;
+```
+
+### Get Three Random Records
+
+```sql
+SELECT * FROM persons
+ORDER BY RAND()
+LIMIT 3;
+```
+
+---
+
+## Count Records
+
+### Count Total Persons
+
+```sql
+SELECT COUNT(*) AS total_persons
+FROM persons;
+```
+
+### Count Persons Above 18
+
+```sql
+SELECT COUNT(*) AS adults
+FROM persons
+WHERE age > 18;
+```
